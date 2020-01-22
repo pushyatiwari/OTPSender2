@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#43d2c4</color>
+    <color name="colorPrimaryDark">#43d2c4</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="text">#1a035c</color>
+    <color name="bactground">#f4c9ed</color>
+    <color name="button">#b79eb7</color>
+    <color name="texttitle">#000000</color>
+    <color name="appbactground">#ffffff</color>
+    <color name="tabback">#43d2c4</color>
+
+
+
+</resources>

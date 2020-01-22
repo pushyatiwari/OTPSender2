@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="coml.example.android.otpsender">
+
+    <uses-permission android:name="android.permission.READ_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/otpicontwo"
+        android:label="Automatic OTP Sender"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/generalnotitle">
+        <activity android:name=".Activities.MainActivity"
+            android:screenOrientation="portrait"
+
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver android:name=".Utils.MyBroadcastReceiver"
+            >
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+                <action android:name="android.provider.Telephony.SMS_SEND" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".Activities.Guide"
+            android:screenOrientation="portrait"
+            />
+
+        <service
+            android:name=".Utils.JobSchedularService"
+            android:exported="true"
+            android:permission="android.permission.BIND_JOB_SERVICE">
+            <intent-filter>
+                <action android:name="android.provider.Telephony.SMS_RECEIVED" />
+                <action android:name="android.provider.Telephony.SMS_SEND" />
+            </intent-filter>
+        </service>
+
+    </application>
+
+</manifest>
